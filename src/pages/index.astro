@@ -121,8 +121,8 @@
       </div>
       
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">🎨</div>
+        <div class="service-card with-image">
+          <img src="/images/services/valkovaya_pjkraska.jpg" alt="Валковая покраска" class="service-card-img">
           <h3>Валковая покраска</h3>
           <p>УФ покраска стекла в любой цвет RAL. Микрометрическая регулировка толщины.</p>
         </div>
@@ -133,8 +133,8 @@
           <p>Высокоточная печать на плоттере Arizona 318 GL. Фотографическое качество.</p>
         </div>
         
-        <div class="service-card">
-          <div class="service-icon">💎</div>
+        <div class="service-card with-image">
+          <img src="/images/services/facet.jpg" alt="Обработка кромки фацетом" class="service-card-img">
           <h3>Обработка кромки фацетом</h3>
           <p>Фацетирование и полировка на 7 станках. Премиум вид и безопасность.</p>
         </div>
@@ -225,7 +225,7 @@
       
       <div class="equipment-grid">
         <div class="equipment-item">
-          <div class="equipment-placeholder">Печь закалки</div>
+          <img src="/images/equipment/pech.jpg" alt="Печь для закалки стекла" class="equipment-img">
           <h3>Горизонтальная закалочная печь</h3>
           <p>Закалка стекла до 12мм</p>
         </div>
@@ -446,6 +446,12 @@
     font-weight: 600;
     line-height: 1.2;
     color: var(--color-primary-dark);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   /* HEADER */
@@ -738,6 +744,26 @@
     border-radius: 12px;
     border: 2px solid var(--color-border);
     transition: all 0.3s;
+    overflow: hidden;
+  }
+
+  .service-card.with-image {
+    padding: 0;
+  }
+
+  .service-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .service-card.with-image h3, .service-card.with-image p {
+    padding: 0 30px;
+  }
+  
+  .service-card.with-image p {
+    padding-bottom: 40px;
   }
 
   .service-card:hover {
@@ -865,6 +891,16 @@
 
   .equipment-item {
     text-align: center;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .equipment-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
   }
 
   .equipment-placeholder {
