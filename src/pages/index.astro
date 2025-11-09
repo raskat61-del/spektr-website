@@ -1,0 +1,306 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Главная">
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">СПЕКТР</div>
+        <nav class="nav">
+          <a href="#services">Услуги</a>
+          <a href="#portfolio">Портфолио</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <a href="tel:+78001234567" class="phone">8 800 123-45-67</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Главный экран -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Производство стеклянных компонентов для мебели</h1>
+        <p class="hero-subtitle">От резки и закалки до печати и покраски</p>
+        <a href="#contacts" class="btn">Получить коммерческое предложение</a>
+        
+        <ul class="features">
+          <li>✓ Собственное производство</li>
+          <li>✓ Оптовые партии от 100 м²</li>
+          <li>✓ Сроки от 7 дней</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Услуги -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Наши услуги</h2>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Закалка стекла</h3>
+          <p>Закалка стекла на современном оборудовании. Партии от 100 м².</p>
+        </div>
+        
+        <div class="service-card">
+          <h3>Валковая покраска</h3>
+          <p>УФ покраска стекла в любой цвет по шкале RAL.</p>
+        </div>
+        
+        <div class="service-card">
+          <h3>УФ печать</h3>
+          <p>Высокоточная УФ печать на стекле на плоттере Arizona 318 GL.</p>
+        </div>
+        
+        <div class="service-card">
+          <h3>Обработка кромки</h3>
+          <p>Фацетирование и полировка кромки на 7 станках.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <h2>Свяжитесь с нами</h2>
+      
+      <div class="contacts-grid">
+        <div class="contact-info">
+          <h3>Контактная информация</h3>
+          <p>📞 8 800 123-45-67</p>
+          <p>📧 info@spektr-glass.ru</p>
+          <p>📍 Волгодонск, Ростовская область</p>
+        </div>
+        
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="text" name="name" placeholder="Ваше имя" required />
+          <input type="tel" name="phone" placeholder="Телефон" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Ваше сообщение" rows="4"></textarea>
+          <button type="submit" class="btn">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 ООО "Спектр". Все права защищены.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* Шапка */
+  .header {
+    background: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+
+  .nav {
+    display: flex;
+    gap: 30px;
+  }
+
+  .nav a {
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav a:hover {
+    color: var(--color-accent);
+  }
+
+  .phone {
+    font-weight: 600;
+    color: var(--color-accent);
+    font-size: 18px;
+  }
+
+  /* Главный экран */
+  .hero {
+    background: linear-gradient(135deg, #1a365d 0%, #003366 100%);
+    color: var(--color-white);
+    padding: 150px 0 100px;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .hero h1 {
+    color: var(--color-white);
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: 16px 40px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background: #005fa3;
+    transform: translateY(-2px);
+  }
+
+  .features {
+    list-style: none;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .features li {
+    font-size: 16px;
+  }
+
+  /* Услуги */
+  .services {
+    padding: 80px 0;
+    background: var(--color-bg-light);
+  }
+
+  .services h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .service-card h3 {
+    margin-bottom: 15px;
+    color: var(--color-accent);
+  }
+
+  /* Контакты */
+  .contacts {
+    padding: 80px 0;
+  }
+
+  .contacts h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+  }
+
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  .contact-info h3 {
+    margin-bottom: 20px;
+  }
+
+  .contact-info p {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    margin-top: 10px;
+  }
+
+  /* Футер */
+  .footer {
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  /* Адаптив */
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .features {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contacts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
